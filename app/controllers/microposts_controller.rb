@@ -5,18 +5,18 @@ class MicropostsController < ApplicationController
   def create
    @micropost = current_user.microposts.build(micropost_params)
     if @micropost.save
-      flash[:success] = 'メッセージを投稿しました。'
+      flash[:success] = '飲み会の募集をしました。。'
       redirect_to root_url
     else
       @microposts = current_user.feed_microposts.order('created_at DESC').page(params[:page])
-      flash.now[:danger] = 'メッセージの投稿に失敗しました。'
+      flash.now[:danger] = '飲み会の募集に失敗しました。'
       render 'toppages/index'
     end
   end
 
   def destroy
     @micropost.destroy
-    flash[:success] = 'メッセージを削除しました。'
+    flash[:success] = '飲み会の募集を取り消しました。'
     redirect_back(fallback_location: root_path)
   end
 

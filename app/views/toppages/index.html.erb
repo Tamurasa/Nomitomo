@@ -5,15 +5,14 @@
       
 <%= form_for(@micropost) do |f| %>
 
-        <div class="form-group">
-          
+
+<div class="form-group">
+
+<%= f.label :content, "参加しやすいように、「日時」「人数」「場所」「概要」は記載しましょう！" %>
 <%= f.text_area :content, class: 'form-control', rows: 5 %>
 
-        </div>
-        
-<%= f.submit 'Post', class: 'btn btn-primary btn-block' %>
-
-      
+</div>
+<%= f.submit '募集する', class: 'btn btn-primary btn-block' %>
 <% end %>
 
     </aside>
@@ -27,9 +26,12 @@
 
   <div class="center jumbotron">
     <div class="text-center">
-      <h1>Welcome to the Microposts</h1>
+      <h1>ようこそ！「Nomitomo」へ！</h1>
+      <h2>「Nomitomo」とは、知らない人と気軽にコミュニケーションが取ることができるビジネスツールです。</h2>
       
-<%= link_to 'Sign up now!', signup_path, class: 'btn btn-lg btn-primary' %>
+      
+<%= link_to '新規登録', signup_path, class: 'btn btn-lg btn-primary' %>
+<%= link_to 'ログイン', login_path, class: 'btn btn-lg btn-primary' %>
 
     </div>
   </div>
